@@ -1,0 +1,269 @@
+.pokertable-oval {
+    width: 520px;
+    height: 370px;
+    background: #a2793c; /* puiduvärv */
+    border-radius: 54% / 49%;
+    margin: 45px auto 30px auto;
+    position: relative;
+    box-shadow: 0 5px 42px #0007;
+    overflow: visible;
+    border: 8px solid #cfb36e;
+}
+
+.pokertable-inner {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    border-radius: 54% / 49%;
+    background: #187842; /* ROHELINE tavalaud */
+    z-index: 2;
+    box-shadow: 0 0 0 12px #a2793c inset, 0 0 32px #0005 inset;
+}
+
+.pokertable-inner.blue {
+    background: #2366b1 !important;
+    box-shadow: 0 0 0 12px #a2793c inset, 0 0 32px #0005 inset !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='54' height='54' viewBox='0 0 54 54' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='8' y='30' font-size='28' font-family='Arial' fill='%23ffffff18'%3E%E2%99%A5%3C/text%3E%3Ctext x='28' y='30' font-size='28' font-family='Arial' fill='%23ffffff14'%3E%E2%99%A6%3C/text%3E%3Ctext x='8' y='52' font-size='28' font-family='Arial' fill='%23ffffff10'%3E%E2%99%A3%3C/text%3E%3Ctext x='28' y='52' font-size='28' font-family='Arial' fill='%23ffffff0f'%3E%E2%99%A0%3C/text%3E%3C/svg%3E") !important;
+    background-size: 54px 54px !important;
+    background-repeat: repeat !important;
+}
+
+
+
+
+.pokertable-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+}
+.pokertable-logo .pix {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 42px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 0 #17702a, 0 5px 18px #0006;
+    text-transform: uppercase;
+}
+.pokertable-logo .play {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 42px;
+    color: #ffd42a;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 0 #8b6b23, 0 5px 18px #0006;
+    text-transform: uppercase;
+    margin-left: 6px;
+}
+.pokertable-logo .poker {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: -8px;
+    display: block;
+    text-shadow: 0 2px 0 #333, 0 2px 10px #0008;
+}
+
+/* Slotid: rohkem vahet ülemistel/allolevatel - DESKTOP */
+.slot1 { top: -32px; left: 100px; }
+.slot2 { top: -32px; right: 100px; }
+.slot3 { top: 98px; right: -42px; }
+.slot4 { bottom: -32px; right: 100px; }
+.slot5 { bottom: -32px; left: 100px; }
+.slot6 { top: 98px; left: -42px; }
+
+.pokertable-slot {
+    width: 125px;
+    min-height: 70px;
+    background: #f8f8f8;
+    border-radius: 13px;
+    border: 2.5px solid #888;
+    font-size: 15px;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 14px #0002;
+    padding: 10px 4px 10px 4px;
+    z-index: 10;
+    overflow: visible;
+}
+.pokertable-slot.mine { border: 2.5px solid #43e76c; background: #d5ffe2; }
+.pokertable-slot.folded { background: #d1d1d1 !important; color: #888 !important; opacity: 0.5; }
+.pokertable-slot.empty { color: #aaa; background: #f6f6f6; }
+.pokertable-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px; margin-top: 2px; }
+.pokertable-money { font-size: 13px; color: #545; margin-bottom: 2px; }
+
+.pokertable-mycards { margin-top: 6px; margin-bottom: 2px; }
+.card-xs { width: 26px; height: 36px; }
+.card-md { width: 38px; height: 56px; }
+.card-lg { width: 55px; height: 80px; }
+.card { display: inline-block; vertical-align: middle; }
+
+.sb-bb-label { font-size: 11px; font-weight: 600; margin-top: 2px; }
+.sb-label { color: #3384ff; }
+.bb-label { color: #cf6000; }
+.dealer-label { font-size: 11px; font-weight: 600; margin-top: 2px; color: #e6be1e; }
+
+/* BOARD kaardid */
+.pokertable-board {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    display: flex;
+    gap: 11px;
+}
+
+/* POT täitsa laua all */
+.pokertable-pot {
+    position: static;
+    margin: 0 auto 18px auto;
+    display: block;
+    box-shadow: 1px 1px 3px #111;
+    background: #1c854b;
+    padding: 10px 36px;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 21px;
+    letter-spacing: 1px;
+    width: fit-content;
+    z-index: 30;
+}
+
+.pokertable-controls {
+    margin: 28px auto 0 auto;
+    width: 520px;
+    max-width: 99vw;
+    text-align: center;
+}
+.pokertable-controls form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.pokertable-btn {
+    margin: 0;
+    background: #41b93c;
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 19px;
+    cursor: pointer;
+    box-shadow: 0 1px 6px #0001;
+    transition: 0.13s;
+}
+.pokertable-btn[style*="background:#e03636"] { background: #e03636 !important; }
+.pokertable-btn[style*="background:#3791d6"] { background: #3791d6 !important; }
+.pokertable-btn[style*="background:#35c247"] { background: #35c247 !important; }
+.pokertable-controls input[type="number"] {
+    padding: 5px 7px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    font-size: 16px;
+    width: 55px;
+    text-align: center;
+}
+
+.pokker-log {
+    width: 520px;
+    max-width: 99vw;
+    margin: 15px auto 0 auto;
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 1px 18px #0002;
+    padding: 11px 18px;
+    min-height: 28px;
+    font-size: 15px;
+    color: #222;
+    text-align: left;
+}
+.pokker-log-row { margin-bottom: 2px; }
+.pokker-log-user { font-weight: bold; }
+.pokker-log-sys { color: #888; }
+
+@media (max-width: 700px) {
+  .pokertable-oval {
+    width: 80vw;
+    height: 64vw;
+    min-width: 180px;
+    min-height: 90px;
+    max-width: 100vw;
+    max-height: 74vw;
+    border-width: 6px;
+  }
+  .pokertable-inner {
+    border-width: 6px;
+  }
+  .pokertable-slot {
+    width: 16vw;
+    min-width: 40px;
+    max-width: 60px;
+    font-size: 10px;
+    padding: 2px 1px 2px 1px;
+    transform: translate(-50%, -50%);
+  }
+  .pokertable-name { font-size: 10px; max-width: 44px; }
+  .pokertable-money { font-size: 9px; }
+  .card-xs { width: 12px; height: 17px; }
+  .card-md { width: 28px; height: 40px; }
+  .card-lg { width: 28px; height: 40px; }
+  .pokertable-board { gap: 5px; }
+  .pokertable-pot { font-size: 13px; padding: 4px 8px; }
+  .pokertable-controls,
+  .pokker-log { width: 99vw; max-width: 100vw; }
+  .slot1 { top: 13%; left: 25%; right: auto; bottom: auto;}
+  .slot2 { top: 13%; left: 75%; right: auto; bottom: auto;}
+  .slot3 { top: 50%; left: 97%; right: auto; bottom: auto;}
+  .slot4 { top: 87%; left: 75%; right: auto; bottom: auto;}
+  .slot5 { top: 87%; left: 25%; right: auto; bottom: auto;}
+  .slot6 { top: 50%; left: 3%; right: auto; bottom: auto;}
+}
+
+#turn-timer-wrap {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+}
+#turn-timer-canvas {
+    position: absolute;
+    left: 0; top: 0;
+    width: 48px; height: 48px;
+    z-index: 1;
+}
+#turn-timer-text {
+    position: absolute;
+    left: 0; top: 0;
+    width: 48px; height: 48px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+    pointer-events: none;
+}
+.pokertable-slot.folded {
+    background: #d1d1d1 !important;
+    color: #888 !important;
+    opacity: 0.5;
+}
+.pokertable-slot.waiting {
+    background: #e6e1fa !important;
+    color: #7b43ea !important;
+    opacity: 0.8;
+}
