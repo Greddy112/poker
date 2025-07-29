@@ -1,4 +1,5 @@
 <?php
+//pokkerilauad
 if ($general != 2) { header('HTTP/1.1 404 Not Found'); exit(); }
 require_once('base.php');
 class mod extends base_module {
